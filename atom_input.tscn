@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cedynxvdtk0k3"]
+
+[ext_resource type="Script" uid="uid://tgbwrq3qv72d" path="res://scenes/AtomInput/AtomInput.gd" id="1_8rd8i"]
+[ext_resource type="Texture2D" uid="uid://c0sej8tjd6n3n" path="res://assets/Ball.png" id="2_5hmvb"]
+
+[node name="AtomInput" type="Node2D"]
+script = ExtResource("1_8rd8i")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_5hmvb")
