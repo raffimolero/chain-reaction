@@ -15,6 +15,10 @@ run/main_scene="uid://pbyyc4wg6ny3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ThemeManager="*res://themes/theme_manager.gd"
+
 [display]
 
 window/size/viewport_width=1080
@@ -25,6 +29,35 @@ window/stretch/mode="viewport"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/theme_gen_save_sync/plugin.cfg")
+
+[importer_defaults]
+
+texture={
+"compress/channel_pack": 0,
+"compress/hdr_compression": 1,
+"compress/high_quality": false,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d/compress_to": 1,
+"editor/convert_colors_with_editor_theme": false,
+"editor/scale_with_editor_scale": false,
+"mipmaps/generate": false,
+"mipmaps/limit": -1,
+"process/fix_alpha_border": true,
+"process/hdr_as_srgb": false,
+"process/hdr_clamp_exposure": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"process/size_limit": 0,
+"roughness/mode": 0,
+"roughness/src_normal": "",
+"svg/scale": 10.0
+}
 
 [input]
 

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b63pqw8colk2f"]
+
+[node name="TextureButtonPlus" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 5

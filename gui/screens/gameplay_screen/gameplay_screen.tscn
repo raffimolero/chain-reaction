@@ -1,4 +1,14 @@
-[gd_scene format=3 uid="uid://7bpwqs02osaj"]
+[gd_scene load_steps=10 format=3 uid="uid://7bpwqs02osaj"]
+
+[ext_resource type="Theme" uid="uid://fg6urxuncfhv" path="res://themes/default_theme.tres" id="1_x21yx"]
+[ext_resource type="LabelSettings" uid="uid://duvdqy0wuuhy3" path="res://resources/label/titleLarge.tres" id="2_n7n2w"]
+[ext_resource type="PackedScene" uid="uid://b63pqw8colk2f" path="res://gui/buttons/texture_button_plus/texture_button_plus.tscn" id="2_w3a4g"]
+[ext_resource type="Texture2D" uid="uid://cmcswilajrvdg" path="res://assets/icons/undo.svg" id="3_ks2mj"]
+[ext_resource type="Texture2D" uid="uid://dsne3si2wv88g" path="res://assets/icons/chat.svg" id="3_rvb8f"]
+[ext_resource type="LabelSettings" uid="uid://b0ymnaoh2cf5u" path="res://resources/label/header3.tres" id="3_ut8hp"]
+[ext_resource type="Texture2D" uid="uid://b0aqnklx2fp2t" path="res://assets/icons/menu.svg" id="4_63dfu"]
+[ext_resource type="LabelSettings" uid="uid://rg1s4asqnol5" path="res://resources/label/titleSmall.tres" id="4_ks2mj"]
+[ext_resource type="LabelSettings" uid="uid://cckjme6l8o7yl" path="res://resources/label/header2.tres" id="5_3l027"]
 
 [node name="GameplayScreen" type="Control"]
 layout_mode = 3
@@ -7,8 +17,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_x21yx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ScreenMargin"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+alignment = 2
+
+[node name="Undo" parent="MarginContainer/VBoxContainer/TopBar" instance=ExtResource("2_w3a4g")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_ks2mj")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/BottomBar"]
+clip_children = 2
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="Control" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Player" type="Label" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Player"
+label_settings = ExtResource("3_ut8hp")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Timer" type="Label" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "10:00"
+label_settings = ExtResource("2_n7n2w")
+horizontal_alignment = 1
+
+[node name="PlayerColor" type="Control" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer/PlayerColor"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer/PlayerColor"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,14 +114,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Turn" type="Label" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer/PlayerColor/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Turn"
+label_settings = ExtResource("4_ks2mj")
+horizontal_alignment = 1
+vertical_alignment = 2
 
-[node name="BottomBar" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="TurnNumber" type="Label" parent="MarginContainer/VBoxContainer/BottomBar/PanelContainer/HBoxContainer/PlayerColor/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+text = "1"
+label_settings = ExtResource("5_3l027")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/BottomBar"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Chat" parent="MarginContainer/VBoxContainer/BottomBar" instance=ExtResource("2_w3a4g")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_rvb8f")
+
+[node name="Menu" parent="MarginContainer/VBoxContainer/BottomBar" instance=ExtResource("2_w3a4g")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_63dfu")

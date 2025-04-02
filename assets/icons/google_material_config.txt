@@ -1,0 +1,3 @@
+full weight and grade
+40px size
+svg 10x scale

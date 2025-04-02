@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://rg1s4asqnol5"]
+
+[ext_resource type="FontFile" uid="uid://io3mfqqi3nw" path="res://fonts/sansita_swashed/static/SansitaSwashed-Regular.ttf" id="1_pi035"]
+
+[resource]
+font = ExtResource("1_pi035")
+font_size = 30
