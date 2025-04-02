@@ -20,6 +20,9 @@ func define_theme() -> void:
 	
 	var panel = stylebox_flat({
 		bg_color = ThemeManager.color_primary, 
+	})
+	
+	var rounded_panel = inherit(panel, {
 		corners_ = round_corners(), 
 	})
 	
@@ -28,6 +31,10 @@ func define_theme() -> void:
 	})
 	
 	define_style("PanelContainer", {
+		panel = rounded_panel
+	})
+	
+	define_style("Panel", {
 		panel = panel
 	})
 	
@@ -39,4 +46,14 @@ func define_theme() -> void:
 		margin_left=margin_x, 
 		margin_bottom=margin_y,
 		margin_top=margin_y
+	})
+	
+	var button_normal = stylebox_flat({
+		bg_color=ThemeManager.color_secondary, 
+		corners_ = round_corners(),
+		
+	})
+	
+	define_style("Button", {
+		normal=button_normal
 	})
