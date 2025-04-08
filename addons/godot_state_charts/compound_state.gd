@@ -241,8 +241,6 @@ func _restore_history_state(target:HistoryState):
 		return
 
 
-			
-
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = super._get_configuration_warnings()
 	

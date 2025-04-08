@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://1jbfqhbtxjm5"]
+
+[ext_resource type="Script" uid="uid://cjxrrlvnw5hg5" path="res://modules/autoloads/game_manager/game_manager.gd" id="1_2e18i"]
+[ext_resource type="Script" uid="uid://c0dhuo5tsftd7" path="res://addons/godot_state_charts/state_chart.gd" id="2_eicpj"]
+[ext_resource type="Script" uid="uid://da5jy5u8ve1bu" path="res://addons/godot_state_charts/compound_state.gd" id="3_l50ok"]
+[ext_resource type="Script" uid="uid://dh3nftonh6ia" path="res://addons/godot_state_charts/atomic_state.gd" id="4_r51xr"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_2e18i")
+
+[node name="StateChart" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_eicpj")
+metadata/_custom_type_script = "uid://c0dhuo5tsftd7"
+
+[node name="NetworkState" type="Node" parent="StateChart"]
+unique_name_in_owner = true
+script = ExtResource("3_l50ok")
+initial_state = NodePath("Local")
+
+[node name="Local" type="Node" parent="StateChart/NetworkState"]
+script = ExtResource("4_r51xr")
+
+[node name="Multiplayer" type="Node" parent="StateChart/NetworkState"]
+script = ExtResource("4_r51xr")

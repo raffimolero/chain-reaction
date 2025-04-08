@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cckjme6l8o7yl"]
+
+[ext_resource type="FontFile" uid="uid://43lmbcb54xui" path="res://fonts/sansita/Sansita-ExtraBold.ttf" id="1_1riyw"]
+
+[resource]
+font = ExtResource("1_1riyw")
+font_size = 60

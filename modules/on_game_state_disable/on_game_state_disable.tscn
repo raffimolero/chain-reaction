@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://rcj68ciph2wu"]
+
+[ext_resource type="Script" uid="uid://dspx061egvdjn" path="res://modules/on_game_state_disable/on_game_state_disable.gd" id="1_qhgqm"]
+
+[node name="OnGameStateDisable" type="Node"]
+script = ExtResource("1_qhgqm")
+do_disable = null
+on_game_state = null

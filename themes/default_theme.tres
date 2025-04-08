@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://fg6urxuncfhv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpelh"]
+bg_color = Color(1, 0.690196, 0.196078, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlkpy"]
+bg_color = Color(0.411765, 0.411765, 0.411765, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_het5a"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.690196, 0.196078, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkf7m"]
+bg_color = Color(0.929412, 0.341176, 0.286275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fx2g0"]
+bg_color = Color(0.929412, 0.341176, 0.286275, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_mpelh")
+ChatBubble/base_type = &"PanelContainer"
+ChatBubble/styles/panel = SubResource("StyleBoxFlat_mlkpy")
+CircleOutlineButton/base_type = &"Button"
+CircleOutlineButton/styles/normal = SubResource("StyleBoxFlat_het5a")
+Panel/styles/panel = SubResource("StyleBoxFlat_lkf7m")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_fx2g0")
+ScreenMargin/base_type = &"MarginContainer"
+ScreenMargin/constants/margin_bottom = 60
+ScreenMargin/constants/margin_left = 30
+ScreenMargin/constants/margin_right = 30
+ScreenMargin/constants/margin_top = 60

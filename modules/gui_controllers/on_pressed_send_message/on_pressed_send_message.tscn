@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt7nvfimp6gd7"]
+
+[ext_resource type="PackedScene" uid="uid://dp3r3facuasdc" path="res://modules/on_pressed_parent/on_pressed_parent.tscn" id="1_itxpp"]
+[ext_resource type="Script" uid="uid://dqrem7bspg14c" path="res://modules/gui_controllers/on_pressed_send_message/on_pressed_send_message.gd" id="2_4k5kg"]
+
+[node name="OnPressedSendMessage" instance=ExtResource("1_itxpp")]
+script = ExtResource("2_4k5kg")
