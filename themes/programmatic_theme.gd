@@ -26,8 +26,16 @@ func define_theme() -> void:
 		corners_ = round_corners(), 
 	})
 	
+	var chat_bubble = inherit(rounded_panel, {
+		bg_color = Color.DIM_GRAY
+	})
+	
 	define_variant_style("CircleOutlineButton", "Button", {
 		normal=circle_outline
+	})
+	
+	define_variant_style("ChatBubble", "PanelContainer", {
+		panel=chat_bubble,
 	})
 	
 	define_style("PanelContainer", {

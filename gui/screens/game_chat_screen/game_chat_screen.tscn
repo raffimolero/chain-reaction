@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://w3t17burvqxr"]
+
+[ext_resource type="Theme" uid="uid://fg6urxuncfhv" path="res://themes/default_theme.tres" id="1_8rkb1"]
+[ext_resource type="PackedScene" uid="uid://b63pqw8colk2f" path="res://gui/buttons/texture_button_plus/texture_button_plus.tscn" id="2_p4phu"]
+[ext_resource type="PackedScene" uid="uid://d2nnu7caj2h70" path="res://gui/chat_log/chat_log.tscn" id="2_ssk3v"]
+[ext_resource type="Texture2D" uid="uid://du5mr53hyep2y" path="res://assets/icons/send.svg" id="4_1cuk6"]
+[ext_resource type="Texture2D" uid="uid://d0eym4btvwyu3" path="res://assets/icons/arrow_back.svg" id="4_xcco7"]
+[ext_resource type="FontFile" uid="uid://l5ye5om1f6cj" path="res://fonts/roboto_mono/RobotoMono-VariableFont_wght.ttf" id="5_fkbtk"]
+[ext_resource type="PackedScene" uid="uid://bt7nvfimp6gd7" path="res://modules/gui_controllers/on_pressed_send_message/on_pressed_send_message.tscn" id="6_xfx5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rkb1"]
+bg_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fkbtk"]
+
+[node name="GameChatScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8rkb1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8rkb1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ScreenMargin"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ChatLog" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_ssk3v")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ChatInput" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+clip_children = 2
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ChatInput"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/ChatInput/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ChatInput" type="TextEdit" parent="MarginContainer/VBoxContainer/ChatInput/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_fkbtk")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fkbtk")
+placeholder_text = "Enter text here..."
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ChatInput/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="Send" parent="MarginContainer/VBoxContainer/ChatInput/HBoxContainer/MarginContainer" instance=ExtResource("2_p4phu")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("4_1cuk6")
+
+[node name="OnPressedSendMessage" parent="MarginContainer/VBoxContainer/ChatInput/HBoxContainer/MarginContainer/Send" node_paths=PackedStringArray("chat_log") instance=ExtResource("6_xfx5t")]
+chat_log = NodePath("../../../../../ChatLog")
+
+[node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+alignment = 2
+
+[node name="Back" parent="MarginContainer/VBoxContainer/BottomBar" instance=ExtResource("2_p4phu")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_xcco7")
+flip_h = true
