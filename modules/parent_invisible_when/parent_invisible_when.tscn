@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2srngeyft0js"]
+
+[ext_resource type="Script" uid="uid://dfx5hv3h5d7oh" path="res://modules/parent_invisible_when/parent_invisible_when.gd" id="1_h80nf"]
+
+[node name="ParentInvisibleWhen" type="Node"]
+script = ExtResource("1_h80nf")

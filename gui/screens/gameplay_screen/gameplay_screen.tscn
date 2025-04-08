@@ -61,7 +61,7 @@ do_disable = true
 on_game_state = "Local"
 force_state = "Local"
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="EmptyGap" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 

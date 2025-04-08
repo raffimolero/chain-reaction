@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://fg6urxuncfhv" path="res://themes/default_theme.tres" id="1_8rkb1"]
 [ext_resource type="PackedScene" uid="uid://b63pqw8colk2f" path="res://gui/buttons/texture_button_plus/texture_button_plus.tscn" id="2_p4phu"]
-[ext_resource type="PackedScene" uid="uid://d2nnu7caj2h70" path="res://gui/chat_log/chat_log.tscn" id="2_ssk3v"]
+[ext_resource type="PackedScene" uid="uid://djw5ywkx3uki7" path="res://gui/chat_log/chat_log.tscn" id="2_ssk3v"]
 [ext_resource type="Texture2D" uid="uid://du5mr53hyep2y" path="res://assets/icons/send.svg" id="4_1cuk6"]
 [ext_resource type="Texture2D" uid="uid://d0eym4btvwyu3" path="res://assets/icons/arrow_back.svg" id="4_xcco7"]
 [ext_resource type="FontFile" uid="uid://l5ye5om1f6cj" path="res://fonts/roboto_mono/RobotoMono-VariableFont_wght.ttf" id="5_fkbtk"]
@@ -84,8 +84,9 @@ layout_mode = 2
 size_flags_horizontal = 8
 texture_normal = ExtResource("4_1cuk6")
 
-[node name="OnPressedSendMessage" parent="MarginContainer/VBoxContainer/ChatInput/HBoxContainer/MarginContainer/Send" node_paths=PackedStringArray("chat_log") instance=ExtResource("6_xfx5t")]
+[node name="OnPressedSendMessage" parent="MarginContainer/VBoxContainer/ChatInput/HBoxContainer/MarginContainer/Send" node_paths=PackedStringArray("chat_log", "chat_input") instance=ExtResource("6_xfx5t")]
 chat_log = NodePath("../../../../../ChatLog")
+chat_input = NodePath("../../../MarginContainer2/ChatInput")
 
 [node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)

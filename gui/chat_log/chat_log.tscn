@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2nnu7caj2h70"]
+[gd_scene load_steps=4 format=3 uid="uid://djw5ywkx3uki7"]
 
-[ext_resource type="PackedScene" uid="uid://yoeoycj5xfte" path="res://gui/chat_message_node/chat_message_node.tscn" id="1_8mgq0"]
+[ext_resource type="PackedScene" uid="uid://c7t4hd1k3qdlw" path="res://gui/chat_message_node/chat_message_node.tscn" id="1_8mgq0"]
 [ext_resource type="Theme" uid="uid://fg6urxuncfhv" path="res://themes/default_theme.tres" id="1_aux80"]
 [ext_resource type="Script" uid="uid://bwlniey7s58hv" path="res://gui/chat_log/chat_log.gd" id="1_hagwh"]
 
@@ -10,6 +10,7 @@ offset_bottom = 110.0
 size_flags_vertical = 3
 theme = ExtResource("1_aux80")
 script = ExtResource("1_hagwh")
+chat_message_scene = ExtResource("1_8mgq0")
 
 [node name="Container" type="VBoxContainer" parent="."]
 unique_name_in_owner = true

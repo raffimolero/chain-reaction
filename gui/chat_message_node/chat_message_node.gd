@@ -14,13 +14,15 @@ func update() -> void:
 
 
 func update_is_sender() -> void: 
-	var avatar = get_node("%Avatar")
+	var avatar = %AvatarContainer
 	if message.is_sender: 
-		alignment = BoxContainer.ALIGNMENT_END
-		move_child(avatar, 1)
+		%Container.alignment = BoxContainer.ALIGNMENT_END
+		%Container.move_child(avatar, 1)
+		%PlayerName.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		return
-	alignment = BoxContainer.ALIGNMENT_BEGIN
-	move_child(avatar, 0)
+	%Container.alignment = BoxContainer.ALIGNMENT_BEGIN
+	%Container.move_child(avatar, 0)
+	%PlayerName.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 
 func update_text() -> void: 
@@ -28,6 +30,8 @@ func update_text() -> void:
 	
 	
 func update_icon() -> void: 
+	if message.avatar_path.is_empty(): 
+		return
 	%Avatar.texture = load(message.avatar_path)
 	
 	
