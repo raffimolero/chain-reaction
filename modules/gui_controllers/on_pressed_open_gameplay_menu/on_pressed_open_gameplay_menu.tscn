@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn0ung7sjf4q1"]
+
+[ext_resource type="PackedScene" uid="uid://dp3r3facuasdc" path="res://modules/on_pressed_parent/on_pressed_parent.tscn" id="1_0vu3t"]
+[ext_resource type="Script" uid="uid://kp78bcd6ey3a" path="res://modules/gui_controllers/on_pressed_open_gameplay_menu/on_pressed_open_gameplay_menu.gd" id="2_qt8n5"]
+
+[node name="OnPressedOpenGameplayMenu" instance=ExtResource("1_0vu3t")]
+process_mode = 3
+script = ExtResource("2_qt8n5")
+open = false
+animation = null

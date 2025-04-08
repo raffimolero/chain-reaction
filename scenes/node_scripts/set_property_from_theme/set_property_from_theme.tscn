@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://digu15k5kblps"]
-
-[ext_resource type="Script" uid="uid://ld76ymysgjbf" path="res://scenes/node_scripts/set_property_from_theme/set_property_from_theme.gd" id="1_e824r"]
-
-[node name="SetPropertyFromTheme" type="Node"]
-script = ExtResource("1_e824r")
